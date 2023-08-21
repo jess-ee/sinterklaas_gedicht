@@ -2,7 +2,6 @@
 import os 
 import langchain
 import streamlit as st 
-from apikey import apikey
 import time
 import re
 
@@ -17,7 +16,7 @@ from langchain.prompts.chat import (
 
 from langchain.chains import LLMChain
 
-os.environ['OPENAI_API_KEY'] = apikey
+apikey = os.getenv('OPENAI_API_KEY')
 
 #App framework
 st.title('Coolblue Sinterklaas gedichten🖊️')
