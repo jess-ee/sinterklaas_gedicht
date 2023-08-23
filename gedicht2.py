@@ -24,7 +24,7 @@ with open('traits.csv', 'r') as f:
     traits_options = f.read().splitlines()
 
 #App framework
-st.title('Coolblue Sinterklaas gedichten')
+st.title('Coolblue Sinterklaas gedichten ✍️')
 
 st.markdown("""
     Welkom bij de Coolblue Sinterklaas gedichten generator!
@@ -34,7 +34,7 @@ st.markdown("""
 name = st.text_input('Voor wie is dit cadeau?')
 gender = st.radio('Selecteer zijn/haar gender:', ['Vrouw', 'Man'])
 hobby = st.multiselect('Wat zijn zijn/haar hobby\'s? (selecteer er 2)', hobbies_options, max_selections=2)
-traits = st.multiselect('Wat zijn zijn/haar goede eigenschappen?',traits_options,max_selections=2)
+traits = st.multiselect('Wat zijn zijn/haar goede eigenschappen? (selecteer er 2)',traits_options,max_selections=2)
 product_type_name = st.text_input('Welk cadeau heb je gekocht voor hem/haar?')
 product = st.text_area('Vul hier de product informatie in')
 
