@@ -69,7 +69,7 @@ chat_prompt = ChatPromptTemplate.from_messages([system_message_prompt, human_mes
 gedicht_chain = LLMChain(llm=chat_model, prompt=chat_prompt, verbose = True)
 
 #show stuff
-if st.button('Begin te schrijven!'):
+if st.button('Vraag G-Piet-R om een gedicht!'):
     try:
         if object:
             response = gedicht_chain.run({
