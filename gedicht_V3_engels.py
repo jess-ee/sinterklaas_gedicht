@@ -25,7 +25,7 @@ from langchain.chains import LLMChain
 # Set the Eleven Labs API Key (replace with your key)
 set_api_key(os.environ.get("ELEVEN_LABS_API_KEY"))
 
-os.environ['OPENAI_API_KEY'] = apikey
+apikey = os.getenv('OPENAI_API_KEY')
 
 with open('Hobbies_English.csv', 'r') as f:
     hobbies_options = f.read().splitlines()
