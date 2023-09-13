@@ -21,7 +21,7 @@ from langchain.prompts.chat import (
 
 from langchain.chains import LLMChain
 
-os.environ['OPENAI_API_KEY'] = apikey
+apikey = os.getenv('OPENAI_API_KEY')
 
 with open('hobbies.csv', 'r') as f:
     hobbies_options = f.read().splitlines()
