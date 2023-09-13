@@ -2,7 +2,6 @@
 import os 
 import langchain
 import streamlit as st 
-from apikey import apikey
 import time
 import re
 import requests
