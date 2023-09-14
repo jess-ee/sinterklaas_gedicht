@@ -41,7 +41,6 @@ st.markdown("""
     """)
 
 name = st.text_input('For who is this gift?')
-gender = st.radio('Select his or her gender:', ['Woman', 'Man'])
 hobby = st.multiselect('What are his or here hobbies? (select at least one option)', hobbies_options, max_selections=2)
 traits = st.multiselect('What are his or her bad habits? (slect at leat one option)',traits_options,max_selections=2)
 product_type_name = st.text_input('Which gift have you bought for him or her?')
@@ -66,7 +65,6 @@ Respond with "You're going back to spain with Saint Nicholas" when someone puts 
 """)
 human_message_prompt = HumanMessagePromptTemplate.from_template("""Informatie about the customer:
 - Name: {name}
-- Pronouns: {pronouns}
 - Hobbies: {hobby}
 - Bad habits {traits}
 
@@ -86,7 +84,6 @@ if st.button('Ask G-Piet-R for a poemSt!'):
         if object:
             response = gedicht_chain.run({
                 "name": name,
-                "pronouns": 'Zij/haar' if gender == 'Vrouw' else 'Hij/hem', 
                 "hobby": ','.join(hobby),
                 "traits": ','.join(traits), 
                 "product_type_name": product_type_name,
