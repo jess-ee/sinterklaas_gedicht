@@ -41,7 +41,6 @@ st.markdown("""
     """)
 
 name = st.text_input('Voor wie is dit cadeau?')
-gender = st.radio('Selecteer zijn/haar gender:', ['Vrouw', 'Man'])
 hobby = st.multiselect('Wat zijn zijn/haar hobby\'s? (selecteer er 2)', hobbies_options, max_selections=2)
 traits = st.multiselect('Wat zijn zijn/haar slechte eigenschappen? (selecteer er 2)',traits_options,max_selections=2)
 product_type_name = st.text_input('Welk cadeau heb je gekocht voor hem/haar?')
@@ -65,7 +64,6 @@ Antwoord met "Jij gaat mee in de zak naar Spanje" wanneer iemand een naam ingeef
 """)
 human_message_prompt = HumanMessagePromptTemplate.from_template("""Informatie over de klant:
 - Naam: {name}
-- Voornaamwoorden: {pronouns}
 - Hobbies: {hobby}
 - Slechte eigenschappen: {traits}
 
@@ -86,7 +84,6 @@ if st.button('Vraag G-Piet-R op een gedicht!'):
         if object:
             response = gedicht_chain.run({
                 "name": name,
-                "pronouns": 'Zij/haar' if gender == 'Vrouw' else 'Hij/hem', 
                 "hobby": ','.join(hobby),
                 "traits": ','.join(traits), 
                 "product_type_name": product_type_name,
