@@ -21,6 +21,10 @@ from langchain.prompts.chat import (
 
 from langchain.chains import LLMChain
 
+os.environ["LANGCHAIN_TRACING_V2"] = "true"
+os.environ["LANGCHAIN_ENDPOINT"] = "https://api.langchain.plus"
+os.environ["LANGCHAIN_API_KEY"] = os.environ.get("LANGCHAIN_API_KEY")
+os.environ["LANGCHAIN_PROJECT"] = "sinterklaas-finetuning"
 
 # Set the Eleven Labs API Key (replace with your key)
 set_api_key(os.environ.get("ELEVEN_LABS_API_KEY"))
