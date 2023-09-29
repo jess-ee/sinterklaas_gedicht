@@ -22,7 +22,7 @@ from langchain.prompts.chat import (
 from langchain.chains import LLMChain
 
 
-# Set the Eleven Labs API Key (replace with your key)
+# Set the Eleven Labs and OpenAI API Key 
 set_api_key(os.environ.get("ELEVEN_LABS_API_KEY"))
 
 apikey = os.getenv('OPENAI_API_KEY')
